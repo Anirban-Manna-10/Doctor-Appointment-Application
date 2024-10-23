@@ -1,0 +1,70 @@
+<div class="body">
+  <div class="cont">
+    <!-- Title section -->
+    <div class="title">Sign up now! 🌟</div>
+    <small class="desc">Your health journey starts here! Create your account today. 🩺</small>
+    <div class="content">
+      <!-- Registration form -->
+      <form action="#">
+        <div class="user-details">
+          <div class="form-group input-box">
+            <span class="details">Full Name</span>
+            <input type="text" id="inputName" placeholder="Enter your name" required>
+          </div>
+          <!-- Input for Username -->
+          <div class="input-box">
+            <span class="details">Username <span class="usernameguid">{{validUserMessage}}</span></span> 
+            <div class="input-group userNameField">
+                <input type="text" class="form-control" [(ngModel)]="Details.userName" id="inlineFormInputGroup" placeholder="Username" required name="username" aria-describedby="validationusername"><!--[(ngModel)]="username"-->
+                <button type="button" class="input-group-text" [class.uservalid]="isValidUserName" (click)="validateUsername()"></button>
+            </div>
+          </div>
+          <!-- Input for Email -->
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" id="inputEmail4" class="form-control" placeholder="Enter your eamil" aria-describedby="validationmail" required><!-- add is-invalid-->
+            <small id="validationmail" class="invalid-feedback">enter a valid email</small>
+          </div>
+          <!-- Input for Phone Number -->
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="number" class="form-control is-invalid" 
+                id="inputName" 
+                placeholder="Enter mobile number" 
+                pattern="[0-9]{10}" 
+                [(ngModel)]="Details.PhoneNo" 
+                [class.is-invalid]="!isValidMobileNo" 
+                aria-describedby="validationphone" 
+                required
+            >
+            <small id="validationphone" class="invalid-feedback">enter a valid number</small>
+          </div>
+          <!-- Input for Password -->
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password"
+                [(ngModel)]="Details.Password" 
+                [class.is-invalid]="!isValidPass" 
+                placeholder="Enter your password" 
+                required>
+          </div>
+          <!-- Input for Confirm Password -->
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password" placeholder="Confirm your password" 
+                [(ngModel)]="ConfirmPassword" 
+                [class.is-invalid]="!isValidConfirmPass"
+                required 
+                aria-describedby="validationpass"
+            >
+            <small id="validationpass" class="invalid-feedback">Password doesn't match</small>
+          </div>
+        </div>
+        <!-- Submit button -->
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
