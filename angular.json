@@ -27,7 +27,7 @@
             "styles": [
               "src/styles.css",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": [
               "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
@@ -97,8 +97,45 @@
             ],
             "scripts": []
           }
+        },
+        "ionic-cordova-serve": {
+          "builder": "@ionic/angular-toolkit:cordova-serve",
+          "options": {
+            "cordovaBuildTarget": "doctorAppointment:ionic-cordova-build",
+            "devServerTarget": "doctorAppointment:serve"
+          },
+          "configurations": {
+            "production": {
+              "cordovaBuildTarget": "doctorAppointment:ionic-cordova-build:production",
+              "devServerTarget": "doctorAppointment:serve:production"
+            }
+          }
+        },
+        "ionic-cordova-build": {
+          "builder": "@ionic/angular-toolkit:cordova-build",
+          "options": {
+            "browserTarget": "doctorAppointment:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "doctorAppointment:build:production"
+            }
+          }
         }
       }
+    }
+  },
+  "cli": {
+    "schematicCollections": [
+      "@ionic/angular-toolkit"
+    ]
+  },
+  "schematics": {
+    "@ionic/angular-toolkit:component": {
+      "styleext": "scss"
+    },
+    "@ionic/angular-toolkit:page": {
+      "styleext": "scss"
     }
   }
 }
