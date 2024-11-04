@@ -1,66 +1,51 @@
 <div class="body">
   <div class="cont">
-    <!-- Title section -->
     <div class="title">Sign up now! 🌟</div>
     <small class="desc">Your health journey starts here! Create your account today. 🩺</small>
     <div class="content">
-      <!-- Registration form -->
-      <form action="#">
+      <form (ngSubmit)="onSubmit()">
         <div class="user-details">
-          <div class="form-group input-box">
-            <span class="details">Full Name</span>
-            <input type="text" id="inputName" placeholder="Enter your name" required>
-          </div>
-          <!-- Input for Username -->
+          <!-- Full Name Input -->
           <div class="input-box">
-            <span class="details">Username <span class="usernameguid">{{validUserMessage}}</span></span> 
+            <span class="details">Full Name</span>
+            <input type="text" id="inputName" placeholder="Enter your name" [(ngModel)]="Details.fullName" name="fullName" required>
+          </div>
+
+          <!-- Username Input -->
+          <div class="input-box">
+            <span class="details">Username <span class="usernameguid">{{validUserMessage}}</span></span>
             <div class="input-group userNameField">
-                <input type="text" class="form-control" [(ngModel)]="Details.userName" id="inlineFormInputGroup" placeholder="Username" required name="username" aria-describedby="validationusername"><!--[(ngModel)]="username"-->
-                <button type="button" class="input-group-text" [class.uservalid]="isValidUserName" (click)="validateUsername()"></button>
+              <input type="text" class="form-control" [(ngModel)]="Details.userName" id="inlineFormInputGroup" placeholder="Username" name="username" required>
+              <button type="button" class="input-group-text" [class.uservalid]="isValidUserName" (click)="validateUsername()">Check</button>
             </div>
           </div>
-          <!-- Input for Email -->
+
+          <!-- Email Input -->
           <div class="input-box">
             <span class="details">Email</span>
-            <input type="email" id="inputEmail4" class="form-control" placeholder="Enter your eamil" aria-describedby="validationmail" required><!-- add is-invalid-->
-            <small id="validationmail" class="invalid-feedback">enter a valid email</small>
+            <input type="email" id="inputEmail4" class="form-control" [(ngModel)]="Details.email" name="email" placeholder="Enter your email" required>
           </div>
-          <!-- Input for Phone Number -->
+
+          <!-- Phone Number Input -->
           <div class="input-box">
             <span class="details">Phone Number</span>
-            <input type="number" class="form-control is-invalid" 
-                id="inputName" 
-                placeholder="Enter mobile number" 
-                pattern="[0-9]{10}" 
-                [(ngModel)]="Details.PhoneNo" 
-                [class.is-invalid]="!isValidMobileNo" 
-                aria-describedby="validationphone" 
-                required
-            >
-            <small id="validationphone" class="invalid-feedback">enter a valid number</small>
+            <input type="number" class="form-control" [(ngModel)]="Details.mobileNo" name="phoneNo" placeholder="Enter mobile number" required>
           </div>
-          <!-- Input for Password -->
+
+          <!-- Password Input -->
           <div class="input-box">
             <span class="details">Password</span>
-            <input type="password"
-                [(ngModel)]="Details.Password" 
-                [class.is-invalid]="!isValidPass" 
-                placeholder="Enter your password" 
-                required>
+            <input type="password" class="form-control" [(ngModel)]="Details.password" name="password" placeholder="Enter your password" required>
           </div>
-          <!-- Input for Confirm Password -->
+
+          <!-- Confirm Password Input -->
           <div class="input-box">
             <span class="details">Confirm Password</span>
-            <input type="password" placeholder="Confirm your password" 
-                [(ngModel)]="ConfirmPassword" 
-                [class.is-invalid]="!isValidConfirmPass"
-                required 
-                aria-describedby="validationpass"
-            >
-            <small id="validationpass" class="invalid-feedback">Password doesn't match</small>
+            <input type="password" class="form-control" [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
           </div>
         </div>
-        <!-- Submit button -->
+
+        <!-- Submit Button -->
         <div class="button">
           <input type="submit" value="Register">
         </div>
