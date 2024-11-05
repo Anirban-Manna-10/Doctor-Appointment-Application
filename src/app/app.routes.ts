@@ -3,6 +3,8 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { HomeComponent } from './home/home.component';
 import { DoctorDetailsComponent } from './doctor-details/doctor-details.component';
+import { UserLayoutComponent } from './user-layout/user-layout.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 export const routes: Routes = [
     { 
@@ -22,6 +24,23 @@ export const routes: Routes = [
     },
     {   
         path: 'doctor-details', component: DoctorDetailsComponent 
+    },
+    {
+        path: 'user', component:UserLayoutComponent,
+        children:[
+            {
+                path:'',
+                redirectTo: 'dashboard' , pathMatch:'full'
+            },
+            {
+                path:'dashboard',
+                component:UserDashboardComponent
+            },
 
+            {
+                path:'find-doctor',
+                component:UserDashboardComponent
+            }
+        ]
     }
 ];
