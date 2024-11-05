@@ -39,7 +39,7 @@ export const routes: Routes = [
 
             {
                 path:'find-doctor',
-                component:UserDashboardComponent
+                component:LoginComponent
             }
         ]
     }

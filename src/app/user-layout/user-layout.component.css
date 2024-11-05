@@ -176,20 +176,24 @@ header .image-text .profession{
 }
 
 .sidebar li a:hover{
-    background-color: var(--primary-color);
+    background-color: #e4edf1;
 }
 
 .sidebar li a:hover .icon,
 .sidebar li a:hover .text{
-    color: var(--sidebar-color);
+    /* color: var(--sidebar-color); */
 }
 
 
-.sidebar .active{
+.sidebar li .active,
+.sidebar li .active:hover{
     background-color: var(--primary-color);
+    border-radius: 35px;
 }
 
-.sidebar .active .icon,
+
+
+.sidebar a.active .icon,
 .sidebar .active .text{
     color: var(--sidebar-color);
 }
@@ -204,6 +208,17 @@ header .image-text .profession{
 .menu-bar::-webkit-scrollbar{
     display: none;
 }
+
+.sidebar .logout a:hover{
+    background-color: #fe5f59;
+}
+
+
+.sidebar .logout a:hover .icon,
+.sidebar .logout a:hover .text{
+    color: var(--sidebar-color);
+}
+
 
 .home{
     position: absolute;
@@ -228,9 +243,7 @@ header .image-text .profession{
     width: calc(100% - 78px);
 }
 
-.sidebar .logout a:hover{
-    background-color: #fe5f59;
-}
+
 
 /* Media Queries */
 
