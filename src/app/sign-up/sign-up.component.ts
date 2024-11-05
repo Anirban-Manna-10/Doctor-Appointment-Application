@@ -25,6 +25,7 @@ export class SignUpComponent {
   isValidPass = true;
   isValidConfirmPass = true;
 
+
   validateUsername(): boolean {
       this.isValidUserName = this.Details.userName === "cap10";
       if(this.isValidUserName)
@@ -41,6 +42,10 @@ export class SignUp{
   EmailId: string;
   Password :string;
   PhoneNo:string;
+  // If role value is 
+  // 0 then error as Select the correct Option
+  // 1 then the user role is a user or a patient
+  // 2 then the user is a Doctor
   constructor(){
     this.FullName = '';
     this.userName = '';

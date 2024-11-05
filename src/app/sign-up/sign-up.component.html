@@ -60,8 +60,16 @@
             <small id="validationpass" class="invalid-feedback">Password doesn't match</small>
           </div>
         </div>
+        
+        <div class="row selectDiv">
+          <select class="form-select select-Button" aria-label="Default select example" id="SelectRole" required >
+            <option value="" disabled selected>Select Your Role For Registration</option>
+            <option value="1">User</option>
+            <option value="2">Doctor</option>
+          </select>          
+        </div>
         <div class="row">
-          <small>Don't have an account? <a [routerLink]="['/login']" style="color: rgb(71, 122, 189); cursor: pointer;">login</a></small>
+          <small>Already have an account? <a [routerLink]="['/login']" style="color: rgb(71, 122, 189); cursor: pointer;">login</a></small>
         </div>
         <!-- Submit button -->
         <div class="button">

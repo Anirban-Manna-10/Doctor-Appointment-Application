@@ -193,6 +193,16 @@ form .form-control:focus {
   box-shadow: none; /* Removes the blue glow */
   border-color: #9b59b6; /* Add a custom border color if you want */
 }
+.selectDiv{
+  margin: 10px 0;
+}
+.select-Button{
+  padding: 10px;
+  height: 45px;
+}
+
+
+
 
 /* Responsive media query code for mobile devices */
 @media(max-width: 584px) {
