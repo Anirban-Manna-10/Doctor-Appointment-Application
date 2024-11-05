@@ -8,8 +8,8 @@
       <div class="col-md-6">
           <div class="profile-head">
               <h3>Anirban Manna</h3>
-              <p class="proile-rating">user Name: <span>CAP10</span></p>
-              <p class="proile-rating">Total no of appoitment: <span>5</span></p>
+              <p class="proile-rating">Username: <span>CAP10</span></p>
+              <p class="proile-rating">Total number of appointments: <span>5</span></p>
               <ul class="nav nav-tabs" id="myTab" role="tablist">
                   <li class="nav-item">
                       <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Details</a>
@@ -25,53 +25,53 @@
       <div class="col-md-8 userDetailsPart">
           <div class="tab-content profile-tab" id="myTabContent">
               <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                  <div class="row">
+                  <div class="row" class="editInput">
                       <div class="col-md-4">
                           <label>Full Name</label>
                       </div>
                       <div class="col-md-8">
-                          <p>Anirban Manna</p>
+                          <input type="text" class="form-control" placeholder="Type Your full name" />
                       </div>
                   </div>
-                  <div class="row">
+                  <div class="row" class="editInput">
                       <div class="col-md-4">
                           <label>Email</label>
                       </div>
                       <div class="col-md-8">
-                          <p>mymail(a)example.com</p>
+                          <input type="email" class="form-control" placeholder="Enter a valid eamilId" required/>
                       </div>
                   </div>
-                  <div class="row">
+                  <div class="row" class="editInput">
                       <div class="col-md-4">
                           <label>Age</label>
                       </div>
                       <div class="col-md-8">
-                          <p>50</p>
+                          <input type="number" class="form-control" placeholder="Enter your age" />
                       </div>
                   </div>
-                  <div class="row">
-                    <div class="col-md-4">
-                        <label>Blood Group</label>
-                    </div>
-                    <div class="col-md-8">
-                        <p>O+</p>
-                    </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4">
-                      <label>Address</label>
+                  <div class="row" class="editInput">
+                      <div class="col-md-4">
+                          <label>Blood Group</label>
+                      </div>
+                      <div class="col-md-8">
+                          <input type="text" class="form-control" placeholder="eg : A+" />
+                      </div>
                   </div>
-                  <div class="col-md-8">
-                      <p>Your Address,City,Country</p>
+                  <div class="row" class="editInput">
+                      <div class="col-md-4">
+                          <label>Address</label>
+                      </div>
+                      <div class="col-md-8">
+                          <input type="text" class="form-control" placeholder="Type your full address" />
+                      </div>
                   </div>
-              </div>
               </div>
           </div>
-          <button class="Btn" (click)="navigateToEdit()">
+          <button class="Btn" onclick="window.location.href='profileEdit.html'">
               <div class="sign">
-                <i class="bi bi-arrow-right-circle-fill" style="color: #f6f7f9;"></i>
+                  <i class="bi bi-arrow-right-circle-fill" style="color: #f6f7f9;"></i>
               </div>
-              <div class="text-editbtn">Edit</div>
+              <div class="text-editbtn">Save</div>
           </button>
       </div>
   </div>

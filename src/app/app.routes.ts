@@ -6,6 +6,7 @@ import { DoctorDetailsComponent } from './doctor-details/doctor-details.componen
 import { UserLayoutComponent } from './user-layout/user-layout.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.component';
 
 export const routes: Routes = [
     { 
@@ -44,6 +45,10 @@ export const routes: Routes = [
             {
                 path:'profile',
                 component:UserProfileComponent
+            },
+            {
+                path:'profile-edit',
+                component:UserProfileEditComponent
             }
         ]
     }

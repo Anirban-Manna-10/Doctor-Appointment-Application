@@ -228,13 +228,12 @@ header .image-text .profession{
     width: calc(100% - 250px);
     background-color: var(--body-color);
     transition: var(--tran-05);
-    padding: 60px 30px;
+    padding: 0 0;
 }
 
 .home .headerNav{
     height: 60px;
     overflow:hidden;
-    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -292,7 +291,7 @@ header .image-text .profession{
 
     .home{
         filter: blur(2px);
-        padding: 10px 15px;
+        padding: 0px 15px;
     }
     .sidebar.close ~ .home{
         left:0px;

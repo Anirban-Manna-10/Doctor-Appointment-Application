@@ -219,6 +219,10 @@
     transform: translate(2px,2px);
 }
 
+.editInput{
+    margin-bottom: 10px;
+}
+
 @media only screen and (max-width:767px) {
     .profile-head h5 {
         margin-top: 2rem;
