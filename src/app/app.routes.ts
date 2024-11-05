@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { DoctorDetailsComponent } from './doctor-details/doctor-details.component';
 import { UserLayoutComponent } from './user-layout/user-layout.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 export const routes: Routes = [
     { 
@@ -36,10 +37,13 @@ export const routes: Routes = [
                 path:'dashboard',
                 component:UserDashboardComponent
             },
-
             {
                 path:'find-doctor',
                 component:LoginComponent
+            },
+            {
+                path:'profile',
+                component:UserProfileComponent
             }
         ]
     }

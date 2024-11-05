@@ -228,13 +228,47 @@ header .image-text .profession{
     width: calc(100% - 250px);
     background-color: var(--body-color);
     transition: var(--tran-05);
-    padding: 10px 30px;
+    padding: 60px 30px;
 }
-.home .text{
-    font-size: 30px;
-    font-weight: 500;
+
+.home .headerNav{
+    height: 60px;
+    overflow:hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--sidebar-color);
+    display: flex;
+    align-items:center;
+    justify-content: right;
+    padding: 10px 100px 10px 10px;
+}
+
+.home .headerNav .profileDrop{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 100%;
+    width: 200px;
+    gap: 10px;
+    cursor: pointer;
+    text-decoration: none;
     color: var(--text-color);
-    padding: 12px 60px;
+}
+
+.home .headerNav .profileDrop .userImage{
+    height: 100%;
+    width: 40px;
+    border-radius: 50%;
+    /* overflow: hidden; */
+}
+
+.home .headerNav .profileDrop .userImage img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .sidebar.close ~ .home{
