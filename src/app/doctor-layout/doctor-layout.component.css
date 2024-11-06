@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:host{
+    /* ===== Colors ===== */
+    --body-color: #E4E9F7;
+    --sidebar-color: #FFF;
+    --primary-color: #3f8bf9;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #DDD;
+    --text-color: #393939;
+
+    /* ====== Transition ====== */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
+}
+
+.headerNav{
+    height: 60px;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--sidebar-color);
+    display: flex;
+    align-items:center;
+    justify-content: right;
+    padding: 10px;
+}
+
+.headerNav .profileDrop{
+    padding: 0 5px ;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 100%;
+    max-width: 200px;
+    gap: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--text-color);
+    margin-right: 3%;
+}
+
+.profileDrop .userImage{
+    height: 100%;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.headerNav .profileDrop .userImage img{
+    height: 100%;
+    object-fit: cover;
+}
+
+.headerNav .profileDrop .userName{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 250px;
+}
+
+.sidebar header{
+    height: 60px;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: start;
+    gap:10px;
+    color: var(--text-color);
+}
+
+.sidebar header .image{
+    height: 100%;
+}
+
+.sidebar header .image img{
+    height: 100%;
+}
+
+.sidebar header .logo-text{
+    display: flex;
+    align-items:start;
+    flex-direction: column;
+}
+
+.sidebar header .logo-text span{
+    letter-spacing: 1px;
+}
+
+.sidebar header .logo-text span:first-child{
+    font-weight: 600;
+    font-size: 25px;
+    margin-top: 2.5px;
+}
+
+.sidebar header .logo-text span:last-child{
+    margin-top: -10px;
+}
+
+.menu-list{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-between;
+    list-style: none;
+    padding: 20px 10px;
+}
+
+.sidebar .menu-list .options{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.sidebar a{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    white-space: nowrap;
+    border-radius: 16px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--tran-03);
+    color: var(--text-color);
+}
+
+.sidebar a .icon{
+    font-size: 17px;
+    font-weight: 300;
+}
+
+.sidebar .menu-list .options a:hover{
+    background-color: #ddf8f2;
+}
+
+.sidebar .menu-list .options a.active{
+    background-color: #3f8bf9;
+    color: var(--sidebar-color);
+}
+.sidebar .menu-list .options a.active:hover{
+    background-color: #3f8bf9;
+    color: var(--sidebar-color);
+}
+
+.sidebar a.logout{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.sidebar a.logout:hover{
+    background-color: #fe5f59;
+    color: var(--sidebar-color);
+}
+
+.home{
+    background-color: #d9fff7;
+    position: absolute;
+    left: 250px;
+    min-height: calc(100vh - 60px);
+    width: calc(100% - 250px);
+}

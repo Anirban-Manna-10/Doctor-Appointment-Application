@@ -241,7 +241,7 @@ header .image-text .profession{
     display: flex;
     align-items:center;
     justify-content: right;
-    padding: 10px 100px 10px 10px;
+    padding: 10px;
 }
 
 .home .headerNav .profileDrop{
@@ -255,6 +255,7 @@ header .image-text .profession{
     cursor: pointer;
     text-decoration: none;
     color: var(--text-color);
+    margin-right: 3%;
 }
 
 .home .headerNav .profileDrop .userImage{

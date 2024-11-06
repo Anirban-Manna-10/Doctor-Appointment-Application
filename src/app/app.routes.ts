@@ -7,6 +7,9 @@ import { UserLayoutComponent } from './user-layout/user-layout.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.component';
+import { AppointmentListComponent } from './appointment-list/appointment-list.component';
+import { DoctorLayoutComponent } from './doctor-layout/doctor-layout.component';
+import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
 
 export const routes: Routes = [
     { 
@@ -50,6 +53,28 @@ export const routes: Routes = [
                 path:'profile-edit',
                 component:UserProfileEditComponent
             }
+        ]
+    },
+
+    {
+        path: 'doctor', component:DoctorLayoutComponent,
+        children:[
+            {
+                path:'',
+                redirectTo: 'dashboard' , pathMatch:'full'
+            },
+            {
+                path:'dashboard',
+                component:DoctorDashboardComponent
+            },
+            {
+                path:'appointment-list',
+                component:AppointmentListComponent
+            },
+            {
+                path:'profile',
+                component:DoctorDetailsComponent
+            },
         ]
     }
 ];
