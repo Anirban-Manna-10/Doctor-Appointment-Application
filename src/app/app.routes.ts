@@ -46,6 +46,7 @@ export const routes: Routes = [
             {
                 path:'find-doctor',
                 component:DocListComponent
+                component:DocListComponent
             },
             {
                 path:'profile',
