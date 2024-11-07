@@ -73,15 +73,17 @@ header{
 }
 
 .DashboardInfo .InfoOptions .InfoLogo{
-    background-color: rgba(255, 255, 255, 0.327);
+    background-color: rgba(255, 255, 255, 0.227);
+    backdrop-filter: blur(3px);
     padding: 5px;
     height: 40px;
     width: 40px;
+    font-weight: 500;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .DashboardInfo .InfoOptions .InfoText{
@@ -242,16 +244,4 @@ table.table .avatar {
     display: inline-block;
     vertical-align: middle;
     line-height: 10px;
-}
-.text-success {
-    color: #10c469;
-}
-.text-info {
-    color: #62c9e8;
-}
-.text-warning {
-    color: #FFC107;
-}
-.text-danger {
-    color: #ff5b5b;
 }

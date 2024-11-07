@@ -11,6 +11,7 @@ import { AppointmentListComponent } from './appointment-list/appointment-list.co
 import { DoctorLayoutComponent } from './doctor-layout/doctor-layout.component';
 import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
 import { DoctorAvailabilityComponent } from './doctor-availability/doctor-availability.component';
+import { DocListComponent } from './doc-list/doc-list.component';
 
 export const routes: Routes = [
     { 
@@ -44,7 +45,7 @@ export const routes: Routes = [
             },
             {
                 path:'find-doctor',
-                component:LoginComponent
+                component:DocListComponent
             },
             {
                 path:'profile',

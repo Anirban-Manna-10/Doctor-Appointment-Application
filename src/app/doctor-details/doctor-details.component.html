@@ -1,60 +1,52 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-<div class="body" >
+<div class="body">
   <div class="container d-flex justify-content-center align-items-center min-vh-100">
     <div class="border rounded-5 p-3 shadow box-area">
       <!-- Left Box -->
-      <div
-      class="rounded-5 d-flex justify-content-center align-items-center flex-column left-box"
-      style="background: #949cce;"
-    >
-      <p
-        class="text-white header-text"
-        style="font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 28px;"
-      >
-        Update Your Profile
-      </p>
-      <small
-        class="text-white sub-text text-center"
-        style="width: 17rem; font-family: 'Poppins', sans-serif; font-size: 15px;"
-      >
-        Provide your details to help patients find you!
-      </small>
-    </div>
-    
+      <div class="left-box">
+        <div class="profile-pic-container">
+          <!-- Profile Picture -->
+          <div class="profile-pic">
+            <img id="profile-pic" src="https://static.vecteezy.com/system/resources/thumbnails/024/585/358/small_2x/3d-happy-cartoon-doctor-cartoon-doctor-on-transparent-background-generative-ai-png.png" alt="Profile Picture"/>
+          </div>
+          <!-- Upload Button -->
+          <div class="profile-upload">
+            <label for="profile-pic-upload" class="upload-label">
+              <span>Upload Picture</span>
+            </label>
+          </div>
+        </div>
+        <p class="text-white header-text">
+          Update Your Profile
+        </p>
+        <small class="text-white sub-text text-center">
+          Provide your details to help patients find you!
+        </small>
+      </div>
+      
       <!-- Right Box -->
       <div class="right-box">
-        <div class="row align-items-center">
-          <form (ngSubmit)="onSaveProfile()">
-            <div class="input-group mb-3">
-              <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Name" required [(ngModel)]="doctorProfile.name" name="name">
-            </div>
-            <div class="input-group mb-3">
-              <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Specialization" required [(ngModel)]="doctorProfile.specialization" name="specialization">
-            </div>
-            <div class="input-group mb-3">
-              <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Hospital Name" required [(ngModel)]="doctorProfile.hospitalName" name="hospitalName">
-            </div>
-            <div class="input-group mb-3">
-              <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Location" required [(ngModel)]="doctorProfile.location" name="location">
-            </div>
-            <div class="input-group mb-3">
-              <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Clinic Mobile Number" required [(ngModel)]="doctorProfile.clinicMobile" name="clinicMobile">
-            </div>
-            <div class="input-group mb-3">
-              <textarea class="form-control form-control-lg bg-light fs-6" placeholder="Description (up to 150 characters)" required [(ngModel)]="doctorProfile.description" name="description" maxlength="150"></textarea>
-            </div>
-            <div class="profile-container">
-              <div class="profile-upload">
-                <input type="file" id="profile-pic" class="inputfile" />
-                <label for="profile-pic" class="upload-label">
-                  <span>Select Profile Picture</span>
-                </label>
-              </div>
-              <button class="save-profile-btn">Save Profile</button>
-            </div>
-          </form>
-        </div>
+        <form (ngSubmit)="onSaveProfile()">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Specialization" required [(ngModel)]="doctorProfile.specialization" name="specialization">
+          </div>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Hospital Name" required [(ngModel)]="doctorProfile.hospitalName" name="hospitalName">
+          </div>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Location" required [(ngModel)]="doctorProfile.location" name="location">
+          </div>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Clinic Mobile Number" required [(ngModel)]="doctorProfile.clinicMobile" name="clinicMobile">
+          </div>
+          <div class="input-group mb-3">
+            <textarea class="form-control form-control-lg bg-light fs-6" placeholder="Description (up to 150 characters)" required [(ngModel)]="doctorProfile.description" name="description" maxlength="150"></textarea>
+          </div>
+          <div class="save-btn-container">
+            <button class="save-profile-btn">Save Profile</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

@@ -1,4 +1,4 @@
-.schedule-container {
+/* .schedule-container {
     max-width: 400px;
     margin: auto;
     text-align: center;
@@ -68,4 +68,57 @@
     background: #6c63ff;
     color: #fff;
   }
+   */
+
+
+.appointmnent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin: 3% 23%;
+  background-color: white;
+  border-radius: 20px;
+  width: 470px;
+  padding: 20px;
+}
+
+.appointmnent p{
+  margin: 10px 0;
+  color: cornflowerblue;
   
+}
+
+.appointmnent .dateChoose{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.appointmnent .dateChoose .date{
+  background-color: #3f8bf9;
+  color: white;
+  padding: 15px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.chooseSlot{
+  display: flex;
+  align-items:flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content:space-around;
+}
+
+.appointmnent .slot{
+  background-color: #b14bc9;
+  padding: 7px 20px;
+  border-radius: 35px;
+  color: white;
+  cursor: pointer;
+}

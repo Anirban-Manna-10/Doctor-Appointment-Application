@@ -120,7 +120,7 @@ export class DoctorDashboardComponent implements OnInit {
   }
 }
 
-interface Appointment {
+interface Appointment{
   id: number;
   name: string;
   date: string;
