@@ -10,6 +10,7 @@ import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.
 import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 import { DoctorLayoutComponent } from './doctor-layout/doctor-layout.component';
 import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
+import { DoctorAvailabilityComponent } from './doctor-availability/doctor-availability.component';
 
 export const routes: Routes = [
     { 
@@ -66,6 +67,10 @@ export const routes: Routes = [
             {
                 path:'dashboard',
                 component:DoctorDashboardComponent
+            },
+            {
+                path:'schedule-availability',
+                component:DoctorAvailabilityComponent
             },
             {
                 path:'appointment-list',

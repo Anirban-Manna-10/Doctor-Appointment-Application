@@ -11,9 +11,8 @@
 <aside class="sidebar">
     <header class="image-text">
             <span class="image">
-                <img src="../../assets/Logo.png" alt="">
+                <img src="../../assets/Logo.png" alt="company logo">
             </span>
-
             <div class="text logo-text">
                 <span class="name">MediTalk</span>
                 <span>Doctor</span>
@@ -21,15 +20,19 @@
     </header>
     <ul class="menu-list">
       <div class="options">
-        <a routerLink="dashboard">
+        <a routerLink="dashboard" routerLinkActive="active">
           <i class="bi bi-calendar2-check icon"></i>
-          <p>Update Availability</p>
+          <p>Dashboard</p>
         </a>
-        <a routerLink="appointment-list">
+        <a routerLink="schedule-availability" routerLinkActive="active">
+          <i class="bi bi-calendar2-check icon"></i>
+          <p>Schedule Availability</p>
+        </a>
+        <a routerLink="appointment-list" routerLinkActive="active">
           <i class="bi bi-person-lines-fill icon"></i>
           <p>Appointment List</p>
         </a>
-        <a routerLink="profile">
+        <a routerLink="profile" routerLinkActive="active">
           <i class="bi bi-person-circle icon"></i>
           <p>Your Profile</p>
         </a>

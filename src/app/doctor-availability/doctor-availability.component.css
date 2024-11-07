@@ -1,0 +1,71 @@
+.schedule-container {
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: #f5f5fa;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .date-picker {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .date-picker button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #6c63ff;
+    cursor: pointer;
+  }
+  
+  .dates {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .dates button {
+    flex: 1;
+    padding: 10px;
+    background: #f3e8ff;
+    border: none;
+    border-radius: 8px;
+    margin: 0 5px;
+    color: #6c63ff;
+    cursor: pointer;
+  }
+  
+  .dates button.selected {
+    background: #6c63ff;
+    color: #fff;
+  }
+  
+  .time-slots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .time-slots button {
+    width: 80px;
+    padding: 8px;
+    background: #f3e8ff;
+    border: none;
+    border-radius: 8px;
+    color: #6c63ff;
+    cursor: pointer;
+  }
+  
+  .time-slots button.selected {
+    background: #6c63ff;
+    color: #fff;
+  }
+  

@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:host{
+    /* ===== Colors ===== */
+    --body-color: #ffffff;
+    --sidebar-color: #FFF;
+    --primary-color: #3f8bf9;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #DDD;
+    --text-color: #393939;
+
+    /* ====== Transition ====== */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
+}
+
+main{
+    background-color: var(--body-color);
+    margin: 2%;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+header{
+    font-size: 35px;
+    font-weight: 100;
+}
+
+.greet{
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.greet-text{
+    font-size: 11px;
+    line-height: 8px;
+    font-weight: 400;
+}
+
+.DashboardInfo{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    margin: 20px 0;
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+.DashboardInfo::-webkit-scrollbar {
+    display: none; 
+  }
+
+.DashboardInfo .InfoOptions{
+    display: flex;
+    align-items: center;
+    justify-content:start;
+    gap: 15px;
+    min-width: 200px;
+    background-color: #3f8bf9;
+    padding: 20px 25px;
+    border-radius: 12px;
+    color: rgb(232, 232, 232);
+}
+
+.DashboardInfo .InfoOptions .InfoLogo{
+    background-color: rgba(255, 255, 255, 0.327);
+    padding: 5px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.DashboardInfo .InfoOptions .InfoText{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.DashboardInfo .InfoOptions .InfoText p:first-child{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Filter Options */
+.FilterOptionsHeader{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 15px;
+    margin: 30px 0 10px 0;
+}
+
+.FilterOptionsHeader .Option{
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* ************************************************************** */
+/* ****************APPOINTMENT LIST DOCTOR ********************** */
+/* ************************************************************** */
+
+.FilterOptionsHeader .Option.select{
+    background-color:rgb(189, 230, 246);    
+}
+
+.AppointmentTable{
+    overflow: auto;
+}
+
+.table-responsive {
+    margin: 30px 0;
+}
+.table-wrapper {
+    min-width: 1000px;
+    background: #fff;
+    padding: 20px 25px;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.table-title {
+    padding-bottom: 15px;
+    background: #299be4;
+    color: #fff;
+    padding: 16px 30px;
+    margin: -20px -25px 10px;
+    border-radius: 3px 3px 0 0;
+}
+.table-title h2 {
+    margin: 5px 0 0;
+    font-size: 24px;
+}
+.table-title .btn {
+    color: #566787;
+    float: right;
+    font-size: 13px;
+    background: #fff;
+    border: none;
+    min-width: 50px;
+    border-radius: 2px;
+    border: none;
+    outline: none !important;
+    margin-left: 10px;
+}
+.table-title .btn:hover, .table-title .btn:focus {
+    color: #566787;
+    background: #f2f2f2;
+}
+.table-title .btn i {
+    float: left;
+    font-size: 21px;
+    margin-right: 5px;
+}
+.table-title .btn span {
+    float: left;
+    margin-top: 2px;
+}
+table.table tr th, table.table tr td {
+    border-color: #e9e9e9;
+    padding: 12px 15px;
+    vertical-align: middle;
+}
+table.table tr th:first-child {
+    width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+table.table tr th:last-child {
+    width: 100px;
+}
+table.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fcfcfc;
+}
+table.table-striped.table-hover tbody tr:hover {
+    background: #f5f5f5;
+}
+table.table th i {
+    font-size: 13px;
+    margin: 0 5px;
+    cursor: pointer;
+}	
+
+table.table tbody tr .nameCell{
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+table.table td:last-child i {
+    opacity: 0.9;
+    font-size: 22px;
+    margin: 0 5px;
+}
+table.table td a {
+    font-weight: bold;
+    color: #566787;
+    display: inline-block;
+    text-decoration: none;
+}
+table.table td a:hover {
+    color: #2196F3;
+}
+table.table td a.settings {
+    color: #2196F3;
+}
+table.table td a.delete {
+    color: #F44336;
+}
+table.table td i {
+    font-size: 19px;
+}
+table.table .avatar {
+    border-radius: 50%;
+    height: 40PX;
+    width: 40px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.status {
+    font-size: 30px;
+    margin: 2px 2px 0 0;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 10px;
+}
+.text-success {
+    color: #10c469;
+}
+.text-info {
+    color: #62c9e8;
+}
+.text-warning {
+    color: #FFC107;
+}
+.text-danger {
+    color: #ff5b5b;
+}
