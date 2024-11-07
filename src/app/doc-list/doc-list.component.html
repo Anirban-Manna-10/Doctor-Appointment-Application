@@ -1,0 +1,45 @@
+<div class="search-bar">
+  <!-- Dropdown start -->
+  <div class="dropdown" (click)="toggleDropdown()">
+    <div id="drop-text" class="dropdown-text">
+      <span>{{ selectedFilter }}</span>
+      <i id="icon" class="fa-solid fa-chevron-down"></i>
+    </div>
+    <ul id="list" class="dropdown-list" [class.show]="dropdownOpen">
+      <li class="dropdown-list-item" (click)="selectFilter('Search by Name')">Search by Name</li>
+      <li class="dropdown-list-item" (click)="selectFilter('Search by Location')">Search by Location</li>
+      <li class="dropdown-list-item" (click)="selectFilter('Search by Specialization')">Search by Specialization</li>
+    </ul>
+  </div>
+  <!-- Dropdown ends -->
+
+  <!-- Search box input start -->
+  <div class="search-box">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      [placeholder]="placeholderText"
+      (input)="onSearch()"
+    />
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </div>
+  <!-- Search box input ends -->
+</div>
+
+<div id="doctor-cards-container">
+  <div *ngFor="let doctor of filteredDoctors" class="doctor-card">
+    <div class="doctor-image">
+      <img [src]="doctor.image" alt="{{ doctor.name }}">
+    </div>
+    <div class="doctor-name">{{ doctor.name }}</div>
+    <div class="doctor-specialization">{{ doctor.specialization }}</div>
+    <div class="doctor-location">{{ doctor.location }}</div>
+
+    <div class="doctor-rating">
+      <span *ngFor="let star of getStarsArray(doctor.rating); let i = index">
+        {{ star ? '★' : '☆' }}
+    </span>
+    </div>
+    <button class="check-availability" (click)="checkAvailability(doctor.name)">Check Availability</button>
+  </div>
+</div>
