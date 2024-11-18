@@ -11,7 +11,7 @@ import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angul
 export class DoctorLayoutComponent  implements OnInit {
 
   constructor() { }
-
+  docName:string = "Dr. Shucu Sarkar";
   ngOnInit() {}
 
   
