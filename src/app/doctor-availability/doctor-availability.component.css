@@ -1,110 +1,178 @@
-/* .schedule-container {
-    max-width: 400px;
-    margin: auto;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    background: #f5f5fa;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .date-picker {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  
-  .date-picker button {
-    background: none;
-    border: none;
-    font-size: 20px;
-    color: #6c63ff;
-    cursor: pointer;
-  }
-  
-  .dates {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  
-  .dates button {
-    flex: 1;
-    padding: 10px;
-    background: #f3e8ff;
-    border: none;
-    border-radius: 8px;
-    margin: 0 5px;
-    color: #6c63ff;
-    cursor: pointer;
-  }
-  
-  .dates button.selected {
-    background: #6c63ff;
-    color: #fff;
-  }
-  
-  .time-slots {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-  }
-  
-  .time-slots button {
-    width: 80px;
-    padding: 8px;
-    background: #f3e8ff;
-    border: none;
-    border-radius: 8px;
-    color: #6c63ff;
-    cursor: pointer;
-  }
-  
-  .time-slots button.selected {
-    background: #6c63ff;
-    color: #fff;
-  }
-   */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  /* font-family: "Poppins", serif; */
+}
 
-
-.appointmnent{
+.appointment{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items:flex-start;
   gap: 15px;
-  margin: 3% 23%;
   background-color: white;
   border-radius: 20px;
-  width: 470px;
-  padding: 20px;
+  margin: 3%;
+  padding: 10px 5%;
 }
 
-.appointmnent p{
-  margin: 10px 0;
-  color: cornflowerblue;
-  
+.nomalText{
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
 }
 
-.appointmnent .dateChoose{
+.appointment .appointment-Form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  gap: 15px;
+}
+
+.appointment .addRow{
+  display:flex;
+  flex-direction: column;
+  justify-content: baseline;
+}
+
+.appointment .addRow .inputBox{
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  gap: 15%;
+}
+
+.appointment .addRow .inputBox .ip{
+  display: flex;
+  flex-direction: column;
+}
+
+.appointment .inputArea{
+  max-width: 300px;
+  min-width: 150px;
+  padding: 7px;
+  border-radius: 10px;
+  border: 1px solid #dee2e6;
+  height: 40px;
+  letter-spacing: 2px;
+  margin: 1px;
+}
+
+.appointment .inputArea.time{
+  max-width: 200px;
+}
+
+.appointment .inputArea:focus{
+  /* border: 2px skyblue solid; */
+  box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+
+.appointment label{
+  margin-left: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.appointment .msg{
+  color: #dc3545;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.appointment .butns{
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 30px;
+}
+
+.appointment .butns button{
+  padding: 8px 16px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid #dee2e6;
+  font-size: 14px;
+}
+
+.appointment .butns button:hover{
+  box-shadow: 0 0 0 0.15rem rgba(0, 123, 255, 0.25);
+}
+
+
+
+/* .appointmnent .dateChoose{
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+  gap:3%;
   width: 100%;
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+.appointment .dateChoose::-webkit-scrollbar {
+  display: none;
 }
 
 .appointmnent .dateChoose .date{
   background-color: #3f8bf9;
   color: white;
-  padding: 15px;
+  padding: 10px;
+  width: 55px;
   border-radius: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+  font-size: 15px;
+}
+
+.appointmnent .dateChoose .date span:nth-child(2){
+  font-size: 24px;
+}
+
+.appointmnent .dateChoose .date.active{
+  background-color: #1f5db5;
+}
+
+.appointmnent .addSlot{
+  display: flex;
+  gap:20px;
+  flex-direction:row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.appointmnent .addSlot .addSlotIp{
+  display: flex;
+  gap:20px;
+  padding: 10px;
+  align-items: center;
+}
+
+.appointmnent .addSlot .addSlotIp .timeIp{
+  max-width: 300px;
+  min-width: 150px;
+  padding: 7px;
+  border-radius: 10px;
+  border: 1px solid #dee2e6;
+  height: 40px;
+  letter-spacing: 2px;
+}
+
+
+.appointmnent .addSlot .addSlotBtn{
+  background-color: #3f8bf9;
+  height: 40px;
+  border-radius: 10px 10px;
+  padding: 10px 15px;
+  border: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 
 .chooseSlot{
@@ -121,4 +189,4 @@
   border-radius: 35px;
   color: white;
   cursor: pointer;
-}
+} */

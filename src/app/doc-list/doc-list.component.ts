@@ -1,7 +1,8 @@
 import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
+import { Router } from '@angular/router';
+import { DoctorService } from '../doctor.service';
 @Component({
   selector: 'app-doc-list',
   standalone: true,
@@ -17,15 +18,15 @@ export class DocListComponent {
   placeholderText = 'Search Doctor';
 
   doctors = [
-    { name: "Dr. John Doe", specialization: "Cardiologist", location: "New York", rating: 4.5, image: "https://cdn3d.iconscout.com/3d/premium/thumb/doctor-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--medical-healthcare-health-avatar-pack-people-illustrations-4715129.png?f=webp" },
-    { name: "Dr. Jane Smith", specialization: "Dermatologist", location: "Los Angeles", rating: 4.7, image: "https://cdn3d.iconscout.com/3d/premium/thumb/doctor-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--medical-healthcare-health-avatar-pack-people-illustrations-4715129.png?f=webp" },
-    { name: "Dr. Emily Johnson", specialization: "Neurologist", location: "Chicago", rating: 4.8, image: "https://img.freepik.com/premium-photo/cute-cartoon-3d-girl-ware-doctor-cloth-friendly-female-doctor-illustration_862994-61953.jpg" },
-    { name: "Dr. Mike Brown", specialization: "Pediatrician", location: "Houston", rating: 4.6, image: "https://cdn3d.iconscout.com/3d/premium/thumb/doctor-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--medical-healthcare-health-avatar-pack-people-illustrations-4715129.png?f=webp" },
-    { name: "Dr. Sarah Wilson", specialization: "Orthopedic", location: "Phoenix", rating: 4.4, image: "https://img.freepik.com/premium-photo/cute-cartoon-3d-girl-ware-doctor-cloth-friendly-female-doctor-illustration_862994-61953.jpg" },
-    { name: "Dr. Tom Hanks", specialization: "General Practitioner", location: "San Francisco", rating: 4.2, image: "https://cdn3d.iconscout.com/3d/premium/thumb/doctor-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--medical-healthcare-health-avatar-pack-people-illustrations-4715129.png?f=webp" },
-    { name: "Dr. Lisa Taylor", specialization: "Oncologist", location: "Seattle", rating: 4.9, image: "https://img.freepik.com/premium-photo/cute-cartoon-3d-girl-ware-doctor-cloth-friendly-female-doctor-illustration_862994-61953.jpg" },
-    { name: "Dr. Samuel Green", specialization: "Psychiatrist", location: "Boston", rating: 4.3, image: "https://cdn3d.iconscout.com/3d/premium/thumb/doctor-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--medical-healthcare-health-avatar-pack-people-illustrations-4715129.png?f=webp" },
-    { name: "Dr. Rachel Adams", specialization: "Endocrinologist", location: "Miami", rating: 4.6, image: "https://img.freepik.com/premium-photo/cute-cartoon-3d-girl-ware-doctor-cloth-friendly-female-doctor-illustration_862994-61953.jpg" }
+    { name: "Dr. John Doe", specialization: "Cardiologist", location: "New York", rating: 4.5,description: "Experienced cardiologist with over 10 years of expertise in treating heart-related ailments.", image: "https://cdn3d.iconscout.com/3d/premium/thumb/doctor-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--medical-healthcare-health-avatar-pack-people-illustrations-4715129.png?f=webp" },
+    { name: "Dr. Jane Smith", specialization: "Dermatologist", location: "Los Angeles", rating: 4.7,description: "Experienced cardiologist with over 10 years of expertise in treating heart-related ailments.", image: "https://cdn3d.iconscout.com/3d/premium/thumb/doctor-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--medical-healthcare-health-avatar-pack-people-illustrations-4715129.png?f=webp" },
+    { name: "Dr. Emily Johnson", specialization: "Neurologist", location: "Chicago", rating: 4.8,description: "Experienced cardiologist with over 10 years of expertise in treating heart-related ailments.", image: "https://img.freepik.com/premium-photo/cute-cartoon-3d-girl-ware-doctor-cloth-friendly-female-doctor-illustration_862994-61953.jpg" },
+    { name: "Dr. Mike Brown", specialization: "Pediatrician", location: "Houston", rating: 4.6,description: "Experienced cardiologist with over 10 years of expertise in treating heart-related ailments.", image: "https://cdn3d.iconscout.com/3d/premium/thumb/doctor-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--medical-healthcare-health-avatar-pack-people-illustrations-4715129.png?f=webp" },
+    { name: "Dr. Sarah Wilson", specialization: "Orthopedic", location: "Phoenix", rating: 4.4,description: "Experienced cardiologist with over 10 years of expertise in treating heart-related ailments.", image: "https://img.freepik.com/premium-photo/cute-cartoon-3d-girl-ware-doctor-cloth-friendly-female-doctor-illustration_862994-61953.jpg" },
+    { name: "Dr. Tom Hanks", specialization: "General Practitioner", location: "San Francisco",description: "Experienced cardiologist with over 10 years of expertise in treating heart-related ailments.", rating: 4.2, image: "https://cdn3d.iconscout.com/3d/premium/thumb/doctor-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--medical-healthcare-health-avatar-pack-people-illustrations-4715129.png?f=webp" },
+    { name: "Dr. Lisa Taylor", specialization: "Oncologist", location: "Seattle", rating: 4.9,description: "Experienced cardiologist with over 10 years of expertise in treating heart-related ailments.", image: "https://img.freepik.com/premium-photo/cute-cartoon-3d-girl-ware-doctor-cloth-friendly-female-doctor-illustration_862994-61953.jpg" },
+    { name: "Dr. Samuel Green", specialization: "Psychiatrist", location: "Boston", rating: 4.3,description: "Experienced cardiologist with over 10 years of expertise in treating heart-related ailments.", image: "https://cdn3d.iconscout.com/3d/premium/thumb/doctor-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--medical-healthcare-health-avatar-pack-people-illustrations-4715129.png?f=webp" },
+    { name: "Dr. Rachel Adams", specialization: "Endocrinologist", location: "Miami", rating: 4.6,description: "Experienced cardiologist with over 10 years of expertise in treating heart-related ailments.", image: "https://img.freepik.com/premium-photo/cute-cartoon-3d-girl-ware-doctor-cloth-friendly-female-doctor-illustration_862994-61953.jpg" }
 ];
 
   filteredDoctors = this.doctors;
@@ -64,10 +65,14 @@ export class DocListComponent {
       );
     }
   }
+  constructor(private doctorService: DoctorService, private router: Router) {}
 
-  checkAvailability(doctorName: string): void {
-    alert(`Availability for ${doctorName} is being checked...`);
+  checkAvailability(doctor: any): void {
+    localStorage.setItem('selectedDoctor', JSON.stringify(doctor)); // Save doctor details in local storage
+    this.doctorService.setDoctorDetails(doctor); // Optionally keep this for in-memory service
+    this.router.navigate(['/user/check-availability']); // Navigate to the new route
   }
+  
   getStarsArray(rating: number): boolean[] {
     const fullStars = Math.floor(rating);
     const halfStar = rating - fullStars >= 0.5 ? 1 : 0;

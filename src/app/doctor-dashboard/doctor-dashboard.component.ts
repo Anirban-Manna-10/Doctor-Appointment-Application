@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -98,7 +98,6 @@ export class DoctorDashboardComponent implements OnInit {
     }
   ];
   AppointmantsToShow : Appointment[] = [];
-
   selectedOption: string = '';
 
   filterAppointmentsByDate() {

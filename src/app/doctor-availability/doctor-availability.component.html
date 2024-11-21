@@ -1,27 +1,73 @@
-<div class="appointmnent">
-  <p>Choose date and fix your appointment</p>
-  <div class="dateChoose">
-    <div class="date">
-      <span>08</span>
-      <span>Aug</span>
+<div class="appointment">
+  <p class="nomalText">Choose date and time to fix your appointment</p>
+  <form (ngSubmit)="AddSlot()" #appointmentForm="ngForm" class="appointment-Form">
+    <div class="addDate addRow">
+      <div class="dateIp inputBox">
+        <div class="stDateIp ip">
+          <label for="startDate labelStyle">Start Date</label>
+          <input type="date" class="inputArea" name="startDate" [min]="minStartDate" [(ngModel)]="startDate" (change)="updateEndLimit()" title="Select a date" required>
+        </div>
+        <div class="endDateIp ip">
+          <label for="endDate labelStyle">End Date</label>
+          <input type="date" class="inputArea" name="endDate" [min]="minEndDate" [(ngModel)]="endDate" [disabled]="!startDate" title="Select a date" required>
+        </div>
+      </div>
+      @if (msg) {
+        <small class="msg">{{msg}}</small>
+      }
     </div>
-    <div class="date">
-      <span>09</span>
-      <span>Aug</span>
+    
+    <div class="addTime addRow">
+      <div class="timeIp inputBox">
+        <div class="stTImeIp ip">
+          <label for="startTime labelStyle">Start time</label>
+          <input type="time" class="inputArea time" [(ngModel)]= "startTime" name="slotStart" (change)="validateTimeRange()" required>
+        </div>
+        <div class="endTimeIp ip">
+          <label for="endTime labelStyle">End time</label>
+          <input type="time" class="inputArea time" [(ngModel)]= "endTime" name="slotEnd" [disabled]="!startTime" (change)="validateTimeRange()" required>
+        </div>
+      </div>
+      @if (timeMsg) { 
+        <small class="msg">{{timeMsg}}</small>
+      }
     </div>
-    <div class="date">
-      <span>10</span>
-      <span>Aug</span>
+  
+    <div class="butns">
+      <button type="reset" >Cancel</button>
+      <button type="submit" class="btn btn-primary" [disabled]="!isValid || appointmentForm.invalid">Add Slot</button>
     </div>
+    
+    
+  </form>
+</div>
+  
+
+
+
+
+
+
+
+
+  <!-- <div class="dateChoose">
+    @for (obj of dateObjects; track $index) {
     <div class="date">
-      <span>11</span>
-      <span>Aug</span>
+      <span>{{ obj.weekday }}</span>
+      <span>{{ obj.date }}</span>
+      <span>{{ obj.month }}</span>
     </div>
-    <div class="date">
-      <span>12</span>
-      <span>Aug</span>
-    </div>
+  }
   </div>
+
+  <form class="addSlot">
+    <div class="addSlotIp">
+      <label>Slot:</label>
+      <input type="time" class="timeIp form-control" step="900" required>
+    </div>
+    <button class="addSlotBtn" type="submit">Add Slot</button>
+  </form>
+
   <p>Choose the time slot</p>
   <div class="chooseSlot">
     <div class="slot">12:10</div>
@@ -35,5 +81,4 @@
     <div class="slot">12:30</div>
     <div class="slot">15:10</div>
     <div class="slot">17:00</div>
-  </div>
-</div>
+  </div> -->

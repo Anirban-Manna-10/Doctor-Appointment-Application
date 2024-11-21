@@ -1,0 +1,86 @@
+<div class="doctor-details-container">
+  <div class="doctor-image">
+    <img [src]="doctor?.image" alt="{{ doctor?.name }}" />
+  </div>
+  <div class="doctor-info">
+    <h2>{{ doctor?.name }}</h2>
+    <p><strong>Specialization:</strong> {{ doctor?.specialization }}</p>
+    <p><strong>Location:</strong> {{ doctor?.location }}</p>
+    <p><strong>Rating:</strong> {{ doctor?.rating }}</p>
+    <p><strong>Description:</strong> {{ doctor?.description }}</p>
+  </div>
+</div>
+
+<div class="appointment-section">
+  <h3>Book an Appointment</h3>
+
+  <!-- Date Selection Section -->
+  <div class="slots-section">
+    <h3>Choose Date</h3>
+    <div>
+      <!-- Helper text for allowed date range -->
+      <p>Please select a date between <strong>18 Nov</strong> and <strong>25 Dec</strong>.</p>
+
+      <!-- Calendar input with date range restriction -->
+      <input 
+        type="date" 
+        [(ngModel)]="selectedDate" 
+        [min]="minDate" 
+        [max]="maxDate" 
+        (change)="validateDate()" 
+        class="calendar-input" 
+      />
+      <!-- Error message for invalid date -->
+      <p *ngIf="dateError" class="error-message">{{ dateError }}</p>
+    </div>
+  </div>
+
+  <!-- Time Slot Selection (unchanged) -->
+  <div class="slots-section">
+    <h3>Choose Time</h3>
+    <div class="time-selection">
+      <div 
+        *ngFor="let time of availableTimes" 
+        class="time-box" 
+        [class.selected]="time === selectedTime"
+        (click)="selectTime(time)"
+      >
+        <span>{{ time }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Patient Information Form (unchanged) -->
+  <form (ngSubmit)="bookAppointment()" #appointmentForm="ngForm" class="appointment-details">
+    <!-- <div class="form-group">
+      <label for="patientName">Name:</label>
+      <input type="text" id="patientName" [(ngModel)]="patient.name" name="name" required />
+    </div> -->
+
+    <div class="form-group">
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" [(ngModel)]="patient.phone" name="phone" required />
+    </div>
+
+    <div class="form-group">
+      <label for="age">Age:</label>
+      <input type="number" id="age" [(ngModel)]="patient.age" name="age" required />
+    </div>
+
+    <!-- <div class="form-group">
+      <label for="gender">Gender:</label>
+      <select [(ngModel)]="patient.gender" name="gender" required>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+    </div> -->
+
+    <div class="form-group">
+      <label for="description">Problem Description:</label>
+      <textarea id="description" [(ngModel)]="patient.description" name="description" required></textarea>
+    </div>
+
+    <button type="submit" [disabled]="appointmentForm.invalid || dateError">Book Appointment</button>
+  </form>
+</div>
